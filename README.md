@@ -4,87 +4,60 @@
 
 ---
 
-# Business Context
+#Business Context & Approach
 
-Microsoft is planning to create a new movie studio and is interested in better understanding the film industry.
-We were tasked with providing conducting an analysis investigating the types of films currently performing best at the box office. Our ultimate goal was to provide a recommendations on the director to hire, the genre of movie to produce, and the month to release the film in. 
+Microsoft is establishing a new movie studio and is gearing up to launch their first feature film. To assist them in this venture, we were tasked with conducting an analysis to determine which types of films are currently performing best at the box office. Our ultimate goal was to provide a series of recommendations that would enable Microsoft to make strategic decisions about which genre of movie to produce, which director to hire, and which month to release the film.
 
-## Key Questions
-1. Which movie genres generate the highest multiples on money?
-1. Which directors generate the highest grossing films?
-1. Which season should we release our movie in? 
+*IMDB
+*Box Office Mojo
+*Rotten Tomatoes
+*TheMovieDB.org
+
+To provide Microsoft with meaningful recommendations, we broke down our analyses into three parts. To determine which genre of movie Microsoft should produce, we examined ratings, worldwide gross bookings, and multiples on money by genre. To determine who Microsoft should hire as the director, we looked at which director had the highest rated movies and which directors generate the highest grossing films.Finally, to determine which month Microsoft should release the film in, we examined worldwide gross bookings by month and by genre.
+
 
 ---
 
-# Data
+#Findings & Recommendations
 
-We utilized several datasets to develop our analyses including movie-related data from:
 
-* Box Office Mojo
-* IMDB
-* Rotten Tomatoes
-* TheMovieDB.org
+##Question 1: Which genre of movie should Microsoft produce?
 
-## Connection
-As a reminder, the connection parameters:
-* host: `hbs-ds-060120.c1doesqrid0e.us-east-1.rds.amazonaws.com`
-* username: `hbs-student`
-* password: <same as before>
-* database: `movies`
+**Recommendation:** Microsoft should produce a Documentary if they want to optimize for ratings. However, if Microsoft wants to generate the highest multiple on money and gross earnings, they should produce an Animation or Sci-Fi movie.
 
-# The Deliverables
+**Findings:**
+*The genres with the highest multiple on money (calculated as worldwide gross / production budget) are: 'Mystery', 'Animation', and 'Sci-Fi'.
+*The genres with the highest median worldwide gross earnings is 'Animation', followed by 'Sci-Fi' and 'Adventure'. Especially notable are 'Animation' and 'Sci-Fi' which also ranked highly on the multiple on money analysis, indicating that these are both high return and high absolute revenue genres.
+*Since 2010, Drama is the genre with the most movies with a 7.5+ / 10 rating on Imdb (with at least 100 votes). Other notable genres are Documentary and Comedy.
+*Documentary is a very attractive genre given its high median rating and a distribution of ratings that really centers around the median. It also had the second highest number of top rated movies based on our analysis from question 5. Drama on the other hand had the most top rated movies. However, this chart illustrates that that was largely driven by a large number of movies produced overall. When looking at the chart above, Drama ranks low on the median rating, and has a wider distribution.
 
-There are three required deliverables for this project:
+![genre by mom](images/genres_mom.png)
 
-1. A well documented **Jupyter Notebook** containing any code you've written for this project and comments explaining it.
-1. An organized **README.md** file in the GitHub repository that describes the contents of the repository. This file should be the source of information for navigating through the repository.
-1. A Github repository containing all of the above files and any additional files worth includding
-1. [OPTIONAL] A short **slide deck** (delivered as a PDF export) giving a high-level overview of your methodology and recommendations for non-technical stakeholders. If you do this, make sure to also add and commit this pdf of your non-technical presentation to your repository with a file name of presentation.pdf.
+![genres by wwg](images/genres_wwg.png)
 
-### Jupyter Notebook Must-Haves
+![genres by ratings](images/genres_ratings2.png)
 
-For this project, your Jupyter Notebook should meet the following specifications:
+![genres by ratings2](images/genres_ratings.png)
 
-#### Organization/Code Cleanliness
+---
+##Question 2: Who should Microsoft hire as the director?
 
-* The notebook should be well organized, easy to follow,  and code should be commented where appropriate.  
-    * Level Up: The notebook contains well-formatted, professional looking markdown cells explaining any substantial code.  All functions have [docstrings](https://numpydoc.readthedocs.io/en/latest/format.html) that act as professional-quality documentation
-* The notebook is written for technical audiences with a way to both understand your approach and reproduce your results. The target audience for this deliverable is other data scientists looking to validate your findings.
+**Recommendation:** If Microsoft elects to produce a Documentary, they should hire Paul Dugdale. If Microsoft decides to produce an Animation or Sci-Fi film, they should hire Denis Villeneuve. 
 
-#### Visualizations & EDA
+**Findings:**
+Since 2010, Paul Dugdale has directed the most movies with a 7.5+ / 10 rating on Imdb (with at least 100 votes). Dugdale directed six, with Ganguly and Villeneuve directing five, and a group including Scorsese and Nolan directing four.
 
-* Your project contains at least 4 meaningful data visualizations, with corresponding interpretations. All visualizations are well labeled with axes labels, a title, and a legend (when appropriate)  
-* You pose at least 3 meaningful questions and answer them through EDA.  These questions should be well labeled and easy to identify inside the notebook.
-    * **Level Up**: Each question is clearly answered with a visualization that makes the answer easy to understand.   
-* Your notebook should contain 1 - 2 paragraphs briefly explaining your approach to this project.
+![directors by rating](images/directors.png)
 
-## Logistics
+--- 
+##Question 3: When should Microsoft release the film?
 
-### Groups
-Team 1: Cong Xu, Paige Tsai
-Team 2: Mark Thai, Lingxi Huang
-Team 3: Adebodun Aina, Reginald Seawright
-Team 4: Cathy Xu, Thomas Crispi
-Team 5: Jay Kim, Kyle Betts
-Team 6: Quentin Grigsby, Yuki Yaguchi
-Team 7: Joshua Rodriguez, Colm Farrell
-Team 8: Marta Zwierz, Abdoul Aziz Nguer
-Team 9: Carmi Medoff, John Guo
-Team 10: Kaitlin Ahlers, Rocio Wu
-Team 11: Yongwei Gao, Yazan Abughaida
+**Recommendation:** Microsoft should release their movie in June or July. 
+**Findings:** The summer months of June and July have the highest multiple on money releases.
 
-### Schedule
-- Wednesday, 6/17: Project kickoff
-- Thursday 6/18: Coach check-ins
-- Friday 6/19: Optional lead check-ins
-- Monday 6/22 morning: Presentations
+![MOM by month](images/genres_month.png)
 
-## Grading Rubric
-
-This rubric is garbage, but if you'd like something to reference, use the top half of  [this](https://github.com/learn-co-curriculum/dsc-mod-1-project-v2-1/blob/master/module1_project_rubric.pdf).  Reminder: this is not actually being graded.
-
-## Summary
-
-The end of module projects are a critical part of the program. They give you a chance to both bring together all the skills you've learned into realistic projects.
-
-The projects are serious and important. They are not graded, but feedback will be given. Take the project seriously, put the time in, ask for help from your peers or instructors early and often if you need it, and treat the review as a job interview and you'll do great. We're rooting for you to succeed and we're only going to ask you to take a review again if we believe that you need to. We'll also provide open and honest feedback so you can improve as quickly and efficiently as possible.
+---
+#Limitations
+* There is a lack of unique identifiers across datatables. 
+* Since many movies have the same title, joining on movie title often resulted in inaccurate information. In these cases, we opted to include no information rather than false information.
