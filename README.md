@@ -40,7 +40,7 @@ To provide Microsoft with meaningful recommendations, we broke down our analyses
 ![genres by ratings2](images/genres_ratings.png)
 
 ---
-##Question 2: Who should Microsoft hire as the director?
+## Question 2: Who should Microsoft hire as the director?
 
 **Recommendation:** If Microsoft elects to produce a Documentary, they should hire Paul Dugdale. If Microsoft decides to produce an Animation or Sci-Fi film, they should hire Denis Villeneuve. 
 
@@ -50,7 +50,7 @@ Since 2010, Paul Dugdale has directed the most movies with a 7.5+ / 10 rating on
 ![directors by rating](images/directors.png)
 
 --- 
-##Question 3: When should Microsoft release the film?
+## Question 3: When should Microsoft release the film?
 
 **Recommendation:** Microsoft should release their movie in June or July. 
 **Findings:** The summer months of June and July have the highest multiple on money releases.
@@ -58,6 +58,6 @@ Since 2010, Paul Dugdale has directed the most movies with a 7.5+ / 10 rating on
 ![MOM by month](images/genres_month.png)
 
 ---
-#Limitations
+# Limitations
 * There is a lack of unique identifiers across datatables. 
 * Since many movies have the same title, joining on movie title often resulted in inaccurate information. In these cases, we opted to include no information rather than false information.
